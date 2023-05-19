@@ -1,0 +1,1093 @@
+<html>
+
+<head>
+    <title>Javascript Testing</title>
+</head>
+
+<body>
+    <h1>
+        Hellow World
+    </h1>
+    <!-- <p class="para">Test content one</p>
+        <p class="para">Text Content two</p>
+        <p class="para">Text content three</p>
+        <button onclick=(changeData())>Click Here</button>
+        <button onclick="alert('I am inline event')">Inline event</button>
+        <button onclick="callingFunction()">Event 2 calling a function</button>
+        <button id="thirdWay">Third way of event</button>
+        <button id="fourthWay" onmousedown="mouseDown()" onmouseup="mouseUp()">Fourth way of event</button><br /><br />
+        <input type="text" id="inputText" placeholder="Enter Here" />
+
+        <select id="iceream" name="icream">
+            <option value="Buttor Skotch"> Buttor Skotch </option>
+            <option value="Vanila"> Vanila </option>
+            <option value="Orange"> Orange </option>
+        </select> -->
+
+    <div>
+        <p>Set time out function div Click and wait 3 seconds and then page will alert "Hellow"</p>
+        <p id="resultHere"></p>
+
+        <button id="btn">Try It</button>
+        <button id="stop">Stop it</button>
+
+    </div>
+
+
+
+
+
+    <h2 id="result"></h2>
+    <style>
+        body {
+            text-align: center;
+            padding: 50px;
+        }
+
+        input,
+        button,
+        select {
+            padding: 10px 20px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+    </style>
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <script>
+        /*
+            //For loop for array
+            let studentName = ["Ayansh", "Anshika", "Navneet", "Nitesh", "Aradhya"];
+
+            for (i = 0; i < studentName.length; i++) {
+                console.log(studentName[i]);
+                //console.log(length);
+            }
+
+            For in loop
+            let studentName = ["Ayansh", "Anshika", "Navneet", "Nitesh", "Aradhya"];
+
+            for (let element in studentName) {
+                console.log(element);
+            }
+
+            * The for in loop iterates over a studentName object
+            * Each iteration returns a key (element)
+            * The key is used to access the value of the key
+            * The value of the key is studentName[element]
+
+            // For of loop
+             let studentName = ["Ayansh", "Anshika", "Navneet", "Nitesh", "Aradhya"];
+
+            for (let element of studentName) {
+               console.log(element);
+            }
+
+        */
+
+        /*
+
+        //For Each loop
+        The forEach() method calls a function for each element in an array.
+        The forEach() method is not executed for empty elements.
+
+        array.forEach(function(currentValue, index, arr), thisValue)
+
+        // Parameters
+
+        function() Required. A function to run for each array element.
+        currentValue Required. The value of the current element.
+        index Optional. The index of the current element.
+        arr	Optional. The array of the current element.
+        thisValue Optional. Default undefined.
+        A value passed to the function as its this value.
+
+        const studentName = ["Ayansh", "Anshika", "Navneet", "Nitesh", "Aradhya"];
+
+        studentName.forEach((items, index, array) => {
+            console.log("Name: " + items + " Index " + index + " Array " + array);
+        });
+
+        studentName.forEach(function (element, index, array) {
+            console.log("Element: " + element + " Index: " + index + " Array " + array);
+        });
+
+        */
+
+        /*
+
+        unshift() method (Array.prototypes.unshift())
+        unshift() method add one or more elements to the begning of an array and returns the new length ot the array.
+        The unshift() method adds new elements to the beginning of an array.
+        The unshift() method overwrites the original array.
+        array.unshift(item1, item2, ..., itemX)
+
+        let studentName = ["Ayansh", "Anshika", "Navneet", "Nitesh", "Aradhaya"];
+        studentName.unshift("Sanvi", "Janvi");
+        console.log(studentName);
+
+
+        push() Method  add one or more elements to the last of an array and returns the new length ot the array.
+        
+        The push() method adds new items to the end of an array.
+        The push() method changes the length of the array.
+        The push() method returns the new length.
+
+        let studentName = ["Ayansh", "Anshika", "Navneet", "Nitesh", "Aradhya"]
+        studentName.push("Sanaya");
+        console.log(studentName);
+
+        
+        */
+
+        /*
+
+        shift() method remove one or more elements to the begning of an array and returns the new length of the array.
+
+        The shift() method removes the first item of an array.
+        The shift() method changes the original array.\
+        The shift() method returns the shifted element.
+
+        const myBrothers = ['Bachcha', 'Suresh', 'Dinesh', 'Mithilesh', 'Akhilesh'];
+        myBrothers.shift();
+        console.log(myBrothers);
+
+        pop() method remove one or more elements to the last of an array and returns the new length ot the array.
+            
+        The pop() method removes (pops) the last element of an array.
+        The pop() method changes the original array.
+        The pop() method returns the removed element.
+
+        const myBrothers = ['Bachcha', 'Suresh', 'Dinesh', 'Mithilesh', 'Akhilesh'];
+        myBrothers.pop();
+        console.log(myBrothers);
+
+        */
+        
+        /*
+
+        splicd(); This method used to adds and/or removes element to the existing array.
+        The splice() method adds and/or removes array elements.
+        The splice() method overwrites the original array.
+        array.splice(index, howmany, item1, ....., itemX)
+
+
+        let studentName = ["Ayansh", "Anshika", "Nitesh", "Navneet"];
+
+        let newStudent = studentName.splice(3, 1, "Nitin", "Ayush", "Amrendra");
+
+        studentName.splice(5, 0, "Mithilesh", "Anshika");
+
+        console.log(studentName);
+        console.log(newStudent);
+        console.log(studentName);
+
+        */
+
+        /*
+
+        Slice() Slice method youse to slice array element from one array to another array (cut arrary element and past it in to other array)
+        The slice() method returns selected elements in an array, as a new array.
+        The slice() method selects from a given start, up to a (not inclusive) given end.
+        The slice() method does not change the original array.
+
+        let studentName = ["Ayansh", "Anshika", "Nitesh", "Nitin", "Ruchi", "Khushi"];
+
+        const sliceStudent = studentName.slice(1, 4);
+        console.log(sliceStudent);
+        console.log(studentName);
+        let FindNitesh = studentName.indexOf("Nitesh");
+
+        if (FindNitesh != -1) {
+            console.log(studentName.slice(1, 4));
+
+        } else (
+            console.log("No such deta found")
+        )
+
+        */
+
+        /*
+
+
+        Map() Method
+        let studentNumber = [400, 370, 450, 420, 280,];
+        map() creates a new array from calling a function for every array element.
+        map() does not execute the function for empty elements.
+        map() does not change the original array.
+        array.map(function(currentValue, index, arr), thisValue)
+
+        Parameters
+        function() Required. A function to be run for each array element.
+        currentValue Required. The value of the current element.
+        index Optional. The index of the current element.
+        arr	Optional. The array of the current element.
+        thisValue Optional. Default value undefined.
+        A value passed to the function to be used as its this value.
+
+        let studentNumber1 = studentNumber.map((currnElm, index, array) => {
+            return `<div keys={${index}}>Index No = ${index} and the value is ${currnElm}, belong to ${array}</div>`
+        });
+
+        console.log(studentNumber1);
+        document.write(studentNumber1);
+
+        */
+
+        /*
+
+        reduce() method
+
+        The reduce() method executes a reducer function for array element.
+        The reduce() method returns a single value: the function's accumulated result.
+        The reduce() method does not execute the function for empty array elements.
+        The reduce() method does not change the original array.
+        
+        substr() Method is similar to slice(). The difference is that the second parameter specifies the lenght of the extracted part.
+        Replacing string content Method
+        String.prototype.replace(searchFor, replaceWith) The replace() method replaces a specified value with another value in a string.
+
+        */
+
+
+        // let myData = "I am Mithilesh Thakur";
+        // let myReplacedata = myData.replace('am', 'Am');
+        // console.log(myReplacedata);
+
+        //charAt() Method  this method returns the character at a specified index ( position ) in a string.
+
+        // let alphaBet = 'ABCDEFGHIJKLMNOPQRSTUVWKYZ';
+        // console.log(alphaBet.charAt(20));
+
+        // charCodeAt() this method returns the unicode of the character at a specified index in a string
+
+        // The method returns a UTF-16 code (an integer between 0 and 65535).
+
+        // let str = "Heellow World";
+        // let newStr = str.length - 1;
+        // console.log(str.charCodeAt(12));
+        // console.log(str.charCodeAt(newStr));
+
+        // toUpperCase()  This is used to convert text in to Upper Case
+        // toLowerCase()  This method used to convert text in to Lower case
+
+        // let str = "Hellow World";
+
+        // console.log(str.toUpperCase() );
+        // console.log(str.toLowerCase() );
+
+        //concat() This method is used to concat string
+
+        //let fName = "Mithilesh", lName = "Thakur";
+        // console.log(fName.concat(" " + lName));
+        //console.log(`${fName} ${lName}`); This is best wey to concat strings
+
+        // trim() this method is used to remove white space from both side of string
+
+        // let str = "      Mithilesh Thakur       ";
+        // console.log(str.trim(0) );
+
+        // split() this method used to convert string in to array
+
+        //let str = "Mithilesh  Thakur"
+
+        //console.log(str.split(" | ")); split on Pipe
+        //console.log(str.split(" , ")); split on commas
+        //console.log(str.split("  "));  split on space
+
+        // search() search moethod
+        // slice(start, end) method
+        //substring(start, end) this method does not accept negative indexes
+
+        // Display only 280 characters of a string like the one used in Twitter.
+
+        // var a = 3;
+        // var b = 10;
+        // function outer() {
+        //     var a = 1;
+        //     function inner() {
+        //         var b = 2;
+        //         console.log(a + b);
+        //     }
+        //     inner();
+        //     console.log(a);
+        // }
+        // console.log(a);
+        // outer();
+        // console.log(b);
+
+        // Date and Time in javascript
+        // Javascript Date objects represent a single moment in time in a platform-independent format.
+        // Date object contain a number that represent miliseconds since 1st January 1970 UTC.
+        // There are 4 ways to create new date object:
+
+        // new Date()
+        // new Date(year, month, day, hours, minutes, seconds, milliseconds);
+        // it take 7 arguments
+        // new Date(milliseconds);
+        // we cannot avoid month section
+        // new Date(date, string);
+
+        // toLocaleString()
+        // let d = new Date();
+        // console.log(d.toLocaleTimeString());
+
+        // toLocaleString()
+        // toString()
+
+        // Math() Method
+
+        // Math() math.random function
+        // This funnction used to create mathomatical calculation ...
+
+
+
+
+        // ------
+
+        //hasChildNodes();
+
+        //console.log(document.body.hasChildNodes());
+
+
+        // querySelector() this method return the first matching value whereas
+        // this method help to select first element by id, class, tag name etc...
+
+        // const changeData = function () {
+        //     document.querySelector('h1').innerHTML = "This this changed data";
+        //     alert("Hii");
+        // }
+
+        //querySelectorAll() this method return all the elements
+        // this method return length of the elements
+
+        // let changeData = function () {
+        //     let byCls = document.querySelectorAll('.para');
+
+        //     console.log(byCls);
+        // }
+
+
+        // --------\
+        /* Event in javascript
+
+             There are fout way to write event in javascript
+             1: using inline events like alert()
+             2: By calling a function (We already seen and most common way of writing )
+             3: using Inline events (HTML onclick="" property and element.onclick)
+             4: Using event listeners (AddEventListener and IE's attachEvent) 
+
+
+             1: Inline event
+
+             <button onclick="alert('I am inline event')">Inline event</button>
+
+             2. By calling a function event
+
+            callingFunction = function () {
+                alert("I am event 2 for calling a function");
+            }
+
+            3. third way of wrigin event
+
+            let thirdWay = document.getElementById('thirdWay');
+
+            thirdWay.onclick = function () {
+                alert("Hi i am third way of wriging function");
+            }
+
+            4. Fourth way of writing event 
+
+            const fourthWay = document.getElementById('fourthWay');
+
+            fourthWay.addEventListener('click', () => {
+                alert("This is a best way of writing event!");
+            });
+
+       //  Note: is function known as callback function
+
+
+        */
+
+        /*
+            Event object : Event object is the parent object of the event object.
+            Example: MouseEvent, FocusEvent, keyboardEvent etc...
+
+            const fourthWay = document.getElementById('fourthWay');
+
+            const checkEvent = () => {
+                alert("I am checking events");
+                console.log(event);
+                console.log(event.target);
+                console.log(event.type);
+
+            }
+
+        fourthWay.addEventListener('click', checkEvent);
+
+        // Mouse Events : those event work with mouse 
+         mouseUp()
+         mouseDown()
+
+         function mouseDown() {
+            document.getElementById('fourthWay').style.color = 'red';
+            //alert("Mouse Down");
+        }
+
+        function mouseUp() {
+            document.getElementById('fourthWay').style.color = 'green';
+            //alert("Mouse Up");
+        }
+
+        <button id="fourthWay" onmousedown="mouseDown()" onmouseup="mouseUp()">Fourth way of event</button>
+
+
+        */
+
+        /*
+            Key events 
+            
+            keyPress()
+            kyeUp()
+            keyDown()
+
+
+             const keyPress = () => {
+            document.getElementById('keys').innerHTML = `you press  ${event.key} and it's code is   ${event.code} `;
+        }
+
+        const keyDown = () => {
+            document.getElementById('keys').innerHTML = 'Key is Down';
+        }
+
+        const kyeUp = () => {
+            document.getElementById('keys').innerHTML = 'key is Up';
+        }
+
+         <input type="text" id="inputText" onkeypress="keyPress()" onkeydown="keyDown()" onkeyup="kyeUp()"
+        placeholder="Enter Here" />
+        <div id="keys"></div>
+
+        */
+
+        /*
+            Input events in javascript
+            The changes event occurs when the value of and element has been changed
+            for the radio buttons and checkboxes the changes event occurs when the checked state has been changed.
+
+
+             const selectIcream = () => {
+
+                const inputValue = document.getElementById('inputText').value;
+                const icream = document.getElementById('iceream').value;
+                const result = document.getElementById('result');
+
+                result.innerHTML = `My name is ${inputValue} and my fav icream is ${icream}`
+            }
+
+            <input type="text" id="inputText" placeholder="Enter Here" />
+
+            <select id="iceream" name="icream" onchange="selectIcream()">
+                <option value="Buttor Skotch"> Buttor Skotch </option>
+                <option value="Vanila"> Vanila </option>
+                <option value="Orange"> Orange </option>
+            </select>
+
+            <h2 id="result"></h2>
+
+
+
+             // Option two for the same thing with addevEntListener
+
+            const icream = document.getElementById('iceream');
+
+            icream.addEventListener('change', () => {
+
+                const inputValue = document.getElementById('inputText').value;
+                const icream = document.getElementById('iceream').value;
+                const result = document.getElementById('result');
+
+                result.innerHTML = `My name is ${inputValue} and my fav icream is ${icream}`;
+
+            });
+
+            <input type="text" id="inputText" placeholder="Enter Here" />
+
+            <select id="iceream" name="icream">
+                <option value="Buttor Skotch"> Buttor Skotch </option>
+                <option value="Vanila"> Vanila </option>
+                <option value="Orange"> Orange </option>
+            </select>
+
+            <h2 id="result"></h2>
+
+            // Difference between onclick function and addEventListener
+            // addEventListener does not overwrite existing event handlers, where as onclick overwite any onclick = fn event handler.
+
+            //other significant difference, of course, is thant onclick will always work, whereas addEventListener don't work in Internet Explorer before version 9.
+
+        */
+
+        /*
+            // Timint event: the window object allows execution of code at specified time intervals.
+            // These time intervals are called timing events.
+            setTimeout()
+            setInterval()
+            clearTimeout()
+            clearInterval()
+
+            // the two key methods to use with javascript are:
+            setTimeout(function, milliseconds)
+            Execute this function after specified number of milliseconds
+             setInterval(function, milliseconds)
+            
+            // First example
+             function myFunction() {
+                alert("Hellow");
+            }
+
+             <div>
+            <p>Set time out function div Click and wait 3 seconds and then page will alert "Hellow"</p>
+            <p>Click "stop" to to prevent the first function to execute</p>
+
+            <button onclick="myVar = setTimeout(myFunction, 2000)">Try It</button>
+            <button onclick="clearTimeout(myVar)">Stop it</button>
+        </div>
+
+        // Example 2
+
+        const result = document.getElementById('resultHere');
+        const cBtn = document.getElementById('btn');
+        const stop = document.getElementById('stop');
+        let timeRef;
+        const showResult = () => {
+            result.innerHTML = "Wait Loodign..."
+            timeRef = setTimeout(() => {
+                result.innerHTML = "Awesome setTimeout result"
+            }, 2000);
+        }
+
+        cBtn.addEventListener('click', showResult);
+        stop.addEventListener('click', () => {
+            result.innerHTML = " "
+            clearTimeout(timeRef);
+        });
+
+
+     <div>
+        <p>Set time out function div Click and wait 3 seconds and then page will alert "Hellow"</p>
+        <p id="resultHere"></p>
+
+        <button id="btn">Try It</button>
+        <button id="stop">Stop it</button>
+    </div>
+
+
+    //Example 3 setInterval() and clearIntercal()
+
+     const result = document.getElementById('resultHere');
+        const cBtn = document.getElementById('btn');
+        const stop = document.getElementById('stop');
+        let timeRef;
+        let num = 1;
+        const showResult = () => {
+            timeRef = setInterval(() => {
+                result.innerHTML = `${num}`;
+                num++;
+            }, 1000);
+        }
+
+        cBtn.addEventListener('click', showResult);
+        stop.addEventListener('click', () => {
+            clearInterval(timeRef);
+        });
+
+        <div>
+            <p>Set time out function div Click and wait 3 seconds and then page will alert "Hellow"</p>
+            <p id="resultHere"></p>
+
+            <button id="btn">Try It</button>
+            <button id="stop">Stop it</button>
+
+        </div>
+
+
+    */
+
+        /*
+        
+        Object Literals
+
+        Object literals ia a key:value pair data structure.
+        Storing variables and functions together in one container.
+        we can rever this as an object.
+
+        Object == school bag
+
+        How to create object 
+
+        // First way
+
+        let bioData = {
+            myName: 'Mithilesh Thakur',
+            myAge: '36',
+            myData: function () {
+                console.log(`My Name is ${bioData.myName} and my age is ${bioData.myAge}`)
+            }
+        }
+
+        bioData.myData();
+
+        // Second way : no need to write full function there we can write myData() only.
+
+        let bioData = {
+            myName: 'Mithilesh Thakur',
+            myAge: '36',
+            myData() {
+                console.log(`My Name is ${bioData.myName} and my age is ${bioData.myAge}`)
+            }
+        }
+
+        bioData.myData();
+
+
+        // Object inside Object
+
+        let bioData = {
+            myFriend: {
+                fName: 'Amrendra',
+                fAge: '36'
+            },
+            myName: 'Mithilesh Thakur',
+            myAge: '36',
+            myData() {
+                console.log(`My Name is ${bioData.myFriend.fName} and my age is ${bioData.myFriend.myAge}`)
+            }
+        }
+
+        console.log(`My friend name is ${bioData.myFriend.fName} my friend age is ${bioData.myFriend.fAge}`);
+
+        What is this object : the definition of "this" object is that it contain the current context.
+        The this object can have different values depending on where it is placed.
+
+        Note: window is global object 
+
+         console.log(this);
+        console.log(this.alert("Hiiii"));
+
+        // Second example
+
+        function myName() {
+            console.log(this);
+        }
+
+        myName();
+
+        Note: current context is window object that's why 'this' is current context of window not for this function 
+
+        // example 3
+
+        var myNames = "Mithilesh Thakur";
+        function myName() {
+            console.log(this.myNames);
+        }
+
+        myName();
+
+         // example 3
+        
+          let myBiodata = {
+            name: 'Mithilesh',
+            address: 'Pandav Nagar',
+            friend() {
+                console.log(this);
+            }
+
+        }
+
+        myBiodata.friend();
+
+
+        //example 4
+
+         let myBiodata = {
+            name: 'Mithilesh',
+            address: 'Pandav Nagar',
+            friend() {
+                console.log(this.address);
+            }
+
+        }
+
+        myBiodata.friend();
+
+        // example 5 : Note- in object if using flat arrow function then this is representing window 
+        // in flat arrow function this can't work
+        
+        let myBiodata = {
+            name: 'Mithilesh',
+            address: 'Pandav Nagar',
+            friend: () => {
+                console.log(this);
+            }
+
+        }
+
+        myBiodata.friend();
+        
+        */
+
+        /*
+        
+        Destructuring in ES6 
+        The destructuring assignment syntax is a javascript expression that make it possible to unpack values from arrays or properties from object, in to distinct variables.
+        // Array destructuring  (array ke value ko tukdo me baatna) and iske ek refrence set karna with some name
+
+        const myBiodata = ['Mithilesh', 'Thakur', 36]
+        let [fName, lName, age] = myBiodata;
+        console.log(lName);
+
+        // We can also add some new value in array
+        const myBiodata = ['Mithilesh', 'Thakur', 36]
+        let [fName, lName, age, address = "New Delhi "] = myBiodata;
+        console.log(address);
+
+        // Note : adding a new value in the same array
+
+
+        //Object destructuring 
+
+        const muBiodata = {
+            fName: 'Mithilesh',
+            lName: 'Thakur',
+            age: 36,
+        }
+
+
+        let { fName, lName, age } = muBiodata;
+        console.log(fName);
+
+        // Note : adding a new value in the same object
+        
+        const myBiodata = {
+            fName: 'Mithilesh',
+            lName: 'Thakur',
+            age: 36,
+
+        }
+
+        let { fName, lName, age, degree = 'Msc' } = myBiodata;
+        console.log(degree);
+
+        */
+
+
+        /*
+            Object properties
+            // Dynamic properties
+
+             let myName = "Vinod";
+        const myBio = {
+            [myName]: "Hellow how are you",
+            [26 + 10]: "is my age"
+        }
+
+
+        console.log(myBio);
+
+        // No need to write key and value, if both are same
+
+         let myName = "Mithilesh Thakur";
+        let myAge = 36;
+
+        const myBio = {
+            myName: myName,
+            myAge: myAge
+        }
+
+        console.log(myBio);
+
+        // i can also write same code in another way
+
+        let myName = "Mithilesh Thakur";
+        let myAge = 36;
+
+        const myBio = {
+            myName,
+            myAge
+        }
+        console.log(myBio);
+        
+        */
+
+        /*
+            Spread operator 
+
+            const color = ['red', 'green', 'white', 'orange', 'purple'];
+            const myFavColor = ['Blue', 'Yellow', ...color];
+            const myNewColor = ['Black', 'Brown', ...myFavColor]
+
+            console.log(myNewColor);
+
+            
+        */
+
+        /*
+            // Rest Operator
+
+            Rest parameter in an improved way to handle function parameter, allowing us to more easily handle various input as parameters in a function. 
+            the rest parameter syntax allows us to represent an indefinite number of arguments as an array...
+            
+            // ES5
+
+            function sum(a, b) {
+            console.log(a + b);
+        }
+
+        sum(1, 2);
+        // Note a, b is a parameter and 1, 2 is a argument
+
+        // ES6 - - - -  In es6 we can pass infinite parameter with (...arrayName) 
+
+        function sum(...inputs) {
+            console.log(...inputs);
+            //note: when we will pass  console.log(inputs) output will come in a array 
+            //note: when we will pass  console.log(...inputs) output will come in a number 
+        }
+        sum(1, 2, 3, 4, 5, 6, 7);
+        // Note a, b is a parameter and 1, 2 is a argument
+
+
+        // we print all number in for of loop and add example is below
+
+        function sum(...inputs) {
+            console.log(...inputs);
+            //note: when we will pass  console.log(inputs) output will come in a array 
+            //note: when we will pass  console.log(...inputs) output will come in a number 
+
+            let total = 0;
+            for (let i of inputs) {
+                total += i;
+            }
+
+            console.log(total);
+        }
+
+        sum(1, 2, 3, 4, 5, 6, 7);
+        // Note a, b is a parameter and 1, 2 is a argument
+
+
+        // Rest with functon and other arguments 
+
+        This is fun mind text for the output
+
+        function fun(a, b, ...c) {
+            console.log(`${a} ${b}`);
+            console.log(c);
+            console.log(c[0]);
+            console.log(c.length);
+            console.log(c.indexOf('Edan'));
+
+        }
+
+        fun('Ronaldo', 'Neymar', 'Pele', 'Messi', 'Edan');
+        
+
+        */
+
+        /*
+
+        ES7 lunch in 2016
+        1. Array.prototype.includes includes() method : This method use to find array value in existing array, If value is present then return true otherwise return false
+
+        const color = ['red', 'green', 'blue', 'purple'];
+        const isPresent = color.includes('green');
+
+        console.log(isPresent);
+
+        2. ** Exponentiation operator : This operator used to multiply with power like 2 is to power 2 = 4, (2X2) = 4, 
+
+        console.log(4 ** 4); //4x4x4x4
+
+        */
+
+        /*
+
+        ES8 2017
+
+        1. String padding
+        2. Object.values()
+        3. Object.entries()
+        4. Object.getOwnPropertyDescriptors()
+        5. Trailing commas in function parameter lists and call
+        6. Async functions
+        7. Shared memory and atomics
+
+
+        1. string padding: padStart(), PadEnd; 
+
+        The padEnd() method pads a string at the end.
+        The padEnd() method pads a string with another string (multiple times) until it reaches a given length.
+        string.padEnd(length, string)
+        string.padStart(length, string)
+
+        let text = "5";
+        let padded = text.padEnd(4,"0");
+
+
+        // example 2
+
+        let numb = 5;
+        let text = numb.toString();
+        let padded = text.padEnd(4,"0");
+
+         3. Object.values(): This method used to get only value of objedt
+
+            const person = {
+                name: "Mithilesh",
+                age: 36
+            }
+
+
+        let print = Object.values(person);
+
+        console.log(print);
+
+
+        3. Object.entries(): This method used to convert intries in seperat array
+        
+         const person = {
+            name: "Mithilesh",
+            age: 36
+        }
+
+
+        let print = Object.entries(person);
+
+        console.log(print);
+
+        */
+
+        /*
+
+        ES9 2018
+
+        1. Rest/Spread Properties (Rest/Spread  operator we can pass in object as well)
+
+        const persone = { name: 'Mithilesh Thakur', age: 36 };
+        const newPerson = { degree: 'Msc', ...persone };
+
+        console.log(persone);
+        console.log(newPerson);
+
+        // Note in es9 version we can call rest/sperad operator in object because in previous version only we can call this operetor with array.
+
+
+
+        2. Asynchronous iteration 
+        3. Promise.prototype.finally()
+        4. Regular Expression improvements
+            * RegExp lookbehind assertion match a string depending on what precedes it
+            * Unicode property escapes \p{...} and \p{...}
+            * Named capturing groups
+            * The $ flag for regular expressions
+            * 
+
+        */
+
+        /*
+        
+        ES10 2019
+
+        1. Array.prototype.{flat, flatMap}
+
+        const arr = [
+            ['zone_1', 'zone_2'],
+            ['zone_3', 'zone_4'],
+            ['zone_5', 'zone_6'],
+            ['zone_7', ['zone_8', 'zone_9']]
+        ]
+
+        let arrayResult = arr.flat();
+
+        console.log(arrayResult);
+
+        // Note: That will work on one label of array
+
+        for more than one lavel we can use flat(level as argument) and for n lebal we can use infinite as argument like flat(Infinity)
+
+         const arr = [
+            ['zone_1', 'zone_2'],
+            ['zone_3', 'zone_4'],
+            ['zone_5', 'zone_6'],
+            ['zone_7', ['zone_8', 'zone_9']]
+        ]
+
+        let arrayResult = arr.flat(Infinity);
+
+        console.log(arrayResult);
+
+
+        2. optional catch binding
+        3. object.fromEntries()
+            object.engris() method used to convet object to array whtile object.fromEntries() method used to convert array to object
+
+            const arr = { name: 'Mithilesh', age: 36 };
+            let arrayResult = Object.entries(arr);
+            console.log(arrayResult);
+            console.log(Object.fromEntries(arrayResult));
+        
+
+        4. string.prototype.{trimStart, trimEnd}
+        5. Symbol.prototype.description
+        6. Json improvement
+        7. Well-formed JSON.stringify()
+        8. Function.prototype.toString()
+
+        */
+
+
+
+        /*
+        
+        Dynamic print Hellow world in h1 tag with javascript using appendChild() method
+        
+        <div id="root"></div>
+        
+        const heading = document.createElement('h1');
+        heading.innerHTML = "Hellow React!";
+        const root = document.getElementById('root');
+        root.appendChild(heading);
+        
+        
+        
+        */
+
+
+
+
+        // const myFriend = ['Amrendra', 'Vijay', 'Anirudha', 'Saroj'];
+
+        // for (let x in myFriend) {
+        //     console.log(x);
+        // }
+
+        // console.log("Hii");
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>

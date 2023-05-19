@@ -1,3 +1,234 @@
-#headingColor{
-    color:red;
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.wrapper {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+input,
+select,
+button:focus {
+  outline-style: none;
+  box-shadow: none;
+  border-color: transparent;
+  background-color: #fff;
+}
+.container {
+  width: 1140px;
+  margin: 0 auto;
+}
+.headerSection {
+  height: 80px;
+  background: #fff;
+  z-index: 1000;
+  will-change: transform;
+  transform: translateZ(0);
+  transition: transform 0.3s ease;
+  padding: 0 20px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.33);
+  display: flex;
+  align-items: center;
+}
+.flex-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-items > ul {
+  list-style-type: none;
+  display: flex;
+}
+.nav-items > ul li {
+  padding: 0 20px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.nav-items > ul li a{
+    color: #282c3f;
+    text-decoration: none;
+}
+.nav-items > ul li a:hover {
+  color: #f49320;
+}
+.headerSection .logo {
+  color: #f4931d;
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+}
+.headerSection .logo span {
+  color: #85a93f;
+}
+.headerSection .logo > img {
+  width: 60px;
+  cursor: pointer;
+}
+.bodySection {
+  margin: 40px 0;
+}
+.cardSection {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.restoCard {
+  width: 230px;
+  padding: 15px;
+  border: 1px solid #fff;
+  cursor: pointer;
+  margin: 0 15px 30px 15px;
+  border-radius: 1rem;
+}
+.cardTitle {
+  font-size: 16px;
+  font-weight: bold;
+  word-break: break-word;
+  padding: 20px 0 5px;
+}
+.cardLink {
+  color: #282c3f;
+  text-decoration: none;
+  cursor: pointer;
+}
+.cardSubTitle {
+  color: #686b78;
+  font-size: 13px;
+  margin-top: 4px;
+}
+.cardContent > ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+}
+.cardContent > ul li {
+  padding: 0;
+  margin: 0;
+  margin-top: 18px;
+  font-size: 12px;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  color: #535665;
+}
+.restoCard > .cardImg {
+  width: 100%;
+  border-radius: 1rem;
+}
+.restoCard:hover {
+  border: 1px solid #ddd;
+}
+.searchSec {
+  padding: 20px 0 0;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+.searchSec > .searchWrapper > .searchInput {
+  border: none;
+  padding: 10px 0;
+  margin: 0 20px;
+  width: 400px;
+}
+.searchSec > .searchWrapper > .searchInput:hover,
+:focus {
+  border-bottom: 1px solid #686b78;
+}
+.searchSec > .filterWrapper > .filterBtn {
+  border: none;
+  border-bottom: 1px solid #fff;
+  background: #fff;
+  color: #686b78;
+  padding: 10px 0;
+  margin: 0 20px;
+}
+.searchSec > .filterWrapper > .filterBtn:hover {
+  border-bottom: 1px solid #686b78;
+  cursor: pointer;
+}
+.searchSec > .filterWrapper > .filterBtn:last-child {
+  margin-right: 0;
+}
+.footer {
+  background: #000;
+  padding: 30px 0;
+  color: #fff;
+  width: 100%;
+  margin: 30px 0 0;
+}
+.shimmer {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-left: -15px;
+  margin-right: -15px;
+  display: flex;
+  margin-top: 30px;
+}
+.shimmer .shimmerCard {
+  width: 230px;
+  cursor: pointer;
+  border: 1px solid #fff;
+  border-radius: 1rem;
+  margin: 0 15px 20px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+}
+.shimmer .shine {
+  background: #f6f7f8;
+  background-image: linear-gradient(
+    to right,
+    #f6f7f8 0%,
+    #edeef1 20%,
+    #f6f7f8 40%,
+    #f6f7f8 100%
+  );
+  background-repeat: no-repeat;
+  background-size: 800px 104px;
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  border-radius: 12px;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-name: placeholderShimmer;
+  -webkit-animation-timing-function: linear;
+}
+.shimmer box {
+  height: 104px;
+  width: 100px;
+}
+.shimmer .shimmerLine {
+  display: inline-flex;
+  flex-direction: column;
+  margin-left: 0;
+  margin-top: 0;
+  vertical-align: top;
+}
+.shimmer lines {
+  height: 10px;
+  margin-top: 10px;
+  width: 200px;
+}
+.shimmer photo {
+  display: block !important;
+  width: 325px;
+  height: 100px;
+  margin-top: 15px;
+}
+@-webkit-keyframes placeholderShimmer {
+  0% {
+    background-position: -468px 0;
+  }
+  100% {
+    background-position: 468px 0;
+  }
 }
